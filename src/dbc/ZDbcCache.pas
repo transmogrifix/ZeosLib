@@ -333,7 +333,7 @@ const
 
 implementation
 
-uses ZFastcode, Math, ZMessages, ZDbcUtils, ZEncoding
+uses ZFastCode, Math, ZMessages, ZDbcUtils, ZEncoding
   {$IFDEF WITH_UNITANSISTRINGS}, AnsiStrings{$ENDIF};
 
 const
@@ -2620,7 +2620,10 @@ begin
                           then ZSetString(PAnsiChar(P), L, Result)
                           else begin
                             FUniTemp := PRawToUnicode(P, L, fClientCP);
-                            Result := PUnicodeToRaw(Pointer(FUniTemp), Length(fUniTemp), zCP_UTF8);
+                            if fClientCP <> zCP_UTF8 then
+                              Result := PUnicodeToRaw(Pointer(FUniTemp), Length(fUniTemp), zCP_UTF8)
+                            else
+                              Result := FUniTemp;
                           end
                         else Result := '';
                       end;
