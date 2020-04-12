@@ -418,7 +418,7 @@ end;
 }
 function TZMySQLDatabaseInfo.StoresMixedCaseIdentifiers: Boolean;
 begin
-  Result := False; //https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html
+  Result := True; //https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html
 end;
 
 {**
