@@ -188,7 +188,7 @@ implementation
 
 uses
   ZMessages, ZDbcSQLiteUtils, ZEncoding, ZDbcLogging, ZFastCode, ZDbcUtils,
-  ZVariant, ZDbcMetadata
+  ZVariant, ZDbcMetadata, Math
   {$IFDEF WITH_UNITANSISTRINGS}, AnsiStrings{$ENDIF};
 
 { TZSQLiteCachedResultSet }
